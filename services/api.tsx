@@ -182,8 +182,9 @@ const GetAllRepairServices = async (params: {
   const fullUrl = `${URL_API}?${queryParams.toString()}`;
 
   const response = await defaultAxiosInstance.post(fullUrl);
-  console.log(response);
+
   return response.data;
+
 };
 const AddRepairServiceApi = async (data: {
   File: File;

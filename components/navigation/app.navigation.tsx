@@ -1,20 +1,22 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "../review/home";
+import HomeScreen from "../review/Home/home";
 import DetailScreen from "../review/detail";
 import LoginScreen from "../review/Login";
 import RegisterScreen from "../review/Register";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
+import AllServices from "../review/Home/AllServices";
 
 // Stack Navigator cho phần Home
 const HomeLayout = () => {
   const Stack = createNativeStackNavigator();
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Detail" component={DetailScreen} />
+      <Stack.Screen name="AllServices" component={AllServices} />
     </Stack.Navigator>
   );
 };
@@ -30,7 +32,7 @@ const TabNavigation = () => {
     };
   
     return (
-      <Tab.Navigator initialRouteName="HomeTab">
+      <Tab.Navigator screenOptions={{ headerShown: false }} initialRouteName="HomeTab">
         <Tab.Screen
           name="Home1"
           component={HomeLayout}

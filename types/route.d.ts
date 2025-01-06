@@ -4,5 +4,6 @@ type RootStackParamList = {
     MainApp: undefined;
     Login: undefined;
     Register: undefined;
+    AllServices: undefined;
     // Feed: { sort: 'latest' | 'top' } | undefined;
 };

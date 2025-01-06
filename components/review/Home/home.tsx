@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Text, View } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import PopularServices from "./PopularServices";
 
 const HomeScreen = (props: any) => {
   const { navigation } = props;
@@ -10,6 +11,7 @@ const HomeScreen = (props: any) => {
     const fetchData = async () => {
       try {
         const value = await AsyncStorage.getItem("token");
+        console.log("Value:", value);
         setData(value);
       } catch (error) {
         console.log("Error reading AsyncStorage:", error);
@@ -21,14 +23,8 @@ const HomeScreen = (props: any) => {
 
   return (
     <View style={{ padding: 20 }}>
-      <Text style={{ fontSize: 18, marginBottom: 20 }}>HomeScreen</Text>
-      <Text style={{ marginBottom: 20 }}>
-        Stored Data: {data ? data : "No data found"}
-      </Text>
-      <Button
-        title="View Details"
-        onPress={() => navigation.navigate("Detail")}
-      />
+      
+      <PopularServices />
     </View>
   );
 };

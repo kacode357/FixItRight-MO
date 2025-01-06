@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import HomeScreen from "./components/review/home";
+import HomeScreen from "./components/review/Home/home";
 import DetailScreen from "./components/review/detail";
 import AboutScreen from "./components/review/about";
 import { useFonts } from "expo-font";

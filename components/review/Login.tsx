@@ -7,15 +7,14 @@ import {
   ImageBackground,
   Keyboard,
   TouchableWithoutFeedback,
-  Alert,
   ActivityIndicator,
-  StyleSheet, // Thêm StyleSheet để định nghĩa style mới
 } from "react-native";
 import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
 import styles from "../../styles/LoginScreenStyles";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage"; 
 import { LoginUserApi } from "../../services/api";
+import { APP_VERSION } from "../../utils/const"; 
 
 const LoginScreen = () => {
   const navigation: NavigationProp<RootStackParamList> = useNavigation();
@@ -42,7 +41,7 @@ const LoginScreen = () => {
 
       navigation.navigate("MainApp"); 
     } catch (error) {
-     
+      
         setLoading(false); 
     } finally {
       setLoading(false); 
@@ -123,11 +122,10 @@ const LoginScreen = () => {
           </Text>
         </View>
         {/* Dòng chữ hiển thị phiên bản ở góc phải màn hình */}
-        <Text style={styles.versionText}>Version 1.0.0</Text>
+        <Text style={styles.versionText}>{APP_VERSION}</Text>
       </ImageBackground>
     </TouchableWithoutFeedback>
   );
 };
-
 
 export default LoginScreen;
