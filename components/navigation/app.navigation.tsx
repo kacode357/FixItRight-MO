@@ -16,7 +16,7 @@ const HomeLayout = () => {
     <Stack.Navigator>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Detail" component={DetailScreen} />
-      <Stack.Screen name="AllServices" component={AllServices} />
+      <Stack.Screen name="All Services" component={AllServices} />
     </Stack.Navigator>
   );
 };
