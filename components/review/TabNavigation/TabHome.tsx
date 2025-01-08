@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { Button, Text, View } from "react-native";
+import { View } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import PopularServices from "./PopularServices";
+import PopularServices from "../Home/PopularServices";
 
-const HomeScreen = (props: any) => {
-  const { navigation } = props;
-  const [data, setData] = useState<string | null>(null);
+const HomeScreen = () => {
+ 
+  
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const value = await AsyncStorage.getItem("token");
-        console.log("Value:", value);
-        setData(value);
+        const token = await AsyncStorage.getItem("token");
+        const Id = await AsyncStorage.getItem("userId");
+        console.log("Value:", token);
+        console.log("Id:", Id);
+       ;
       } catch (error) {
         console.log("Error reading AsyncStorage:", error);
       }

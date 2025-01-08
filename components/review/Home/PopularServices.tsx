@@ -51,7 +51,7 @@ const PopularServices = () => {
           Active: true,
         });
         setServices(data.Data);
-        console.log("Services:", data);
+      
       } catch (error) {
         console.error("Failed to fetch services:", error);
       } finally {

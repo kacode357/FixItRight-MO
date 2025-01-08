@@ -1,19 +1,10 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  ImageBackground,
-  Keyboard,
-  TouchableWithoutFeedback,
-  ActivityIndicator,
-} from "react-native";
+import { View, Text, TextInput, TouchableOpacity, ImageBackground, Keyboard, TouchableWithoutFeedback, ActivityIndicator } from "react-native";
 import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
 import styles from "../../styles/LoginScreenStyles";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage"; 
-import { LoginUserApi } from "../../services/api";
+import { LoginUserApi, GetCurrentLogin } from "../../services/api";
 import { APP_VERSION } from "../../utils/const"; 
 
 const LoginScreen = () => {
@@ -38,7 +29,9 @@ const LoginScreen = () => {
 
       // Lưu token vào AsyncStorage
       await AsyncStorage.setItem("token", response.AccessToken);
-
+      console.log("Token check value");
+      const currentUser = await GetCurrentLogin();
+      await AsyncStorage.setItem("userId", currentUser.Id);
       navigation.navigate("MainApp"); 
     } catch (error) {
       

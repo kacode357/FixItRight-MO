@@ -7,4 +7,4 @@ export const globalStyles = StyleSheet.create({
         fontFamily: OPEN_SANS_REGULAR,
     },
 });
-export const APP_VERSION = "Version 1.0.1";
+export const APP_VERSION = "Version 1.0.2";

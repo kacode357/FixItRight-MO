@@ -1,7 +1,5 @@
-import {
-  defaultAxiosInstance,
-  axiosWithoutLoading,
-} from "../utils/axios.customize";
+import { defaultAxiosInstance, axiosWithoutLoading } from "../utils/axios.customize";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 // Hàm chuyển đổi đối tượng thành FormData
 const convertToFormData = (data: { [key: string]: any }): FormData => {
@@ -34,7 +32,7 @@ const LoginUserApi = async (data: { UserName: string; Password: string }) => {
 
 const GetCurrentLogin = async () => {
   const URL_API = "/api/authentication/current-user";
-  const token = localStorage.getItem("token");
+  const token = await AsyncStorage.getItem("token");
   if (token) {
     const response = await axiosWithoutLoading.get(URL_API);
     return response.data;

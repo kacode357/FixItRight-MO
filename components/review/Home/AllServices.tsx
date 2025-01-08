@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Text, TextInput, View, StyleSheet } from "react-native";
 import SearchResults from "./SearchResults";
 
-const AllServices: React.FC = () => {
+const AllServices = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
 
   return (
