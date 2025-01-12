@@ -7,7 +7,7 @@ import AppNavigation from "./components/navigation/app.navigation";
 import Toast from "react-native-toast-message";
 import { Provider as PaperProvider } from "react-native-paper";
 import {SafeAreaView } from "react-native-safe-area-context";
-
+//hello
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
