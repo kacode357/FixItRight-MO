@@ -4,11 +4,12 @@ const styles = StyleSheet.create({
   background: {
     flex: 1,
     resizeMode: "cover",
+    justifyContent: "center",
   },
   container: {
     flex: 1,
+    padding: 20,
     justifyContent: "center",
-    paddingHorizontal: 20,
   },
   title: {
     fontSize: 28,
@@ -45,22 +46,14 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 40,
   },
-  forgotPassword: {
-    alignSelf: "flex-end",
-    marginBottom: 20,
-  },
-  forgotText: {
-    color: "#0000ff",
-    fontSize: 14,
-  },
-  loginButton: {
+  registerButton: {
     backgroundColor: "#1a73e8",
     padding: 15,
     borderRadius: 10,
     alignItems: "center",
     marginBottom: 20,
   },
-  loginButtonText: {
+  registerButtonText: {
     color: "#fff",
     fontSize: 16,
     fontWeight: "bold",
@@ -85,22 +78,20 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     elevation: 3,
   },
-  signupText: {
+  loginText: {
     textAlign: "center",
     color: "#666",
   },
-  signupLink: {
+  loginLink: {
     color: "#1a73e8",
     textDecorationLine: "underline",
   },
   versionText: {
-    position: "absolute",
-    bottom: 10,
-    right: 10,
-    fontSize: 14,
-    color: "black",
-    fontWeight: "bold",
-  }
+    textAlign: "center",
+    fontSize: 12,
+    color: "#666",
+    marginBottom: 10,
+  },
 });
 
 export default styles;

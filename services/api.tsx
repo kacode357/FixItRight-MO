@@ -271,7 +271,36 @@ const AddTransactionApi = async (data: {
     throw error;
   }
 };
+const RegisterUserApi = async (data: {
+  Fullname?: string;
+  Gender?: string;
+  Birthday?: string;
+  Address?: string;
+  UserName: string;
+  Password: string;
+  PhoneNumber: string;
+}) => {
+  const URL_API = "/api/authentication/customers";
+  const formData = new FormData();
+
+  formData.append("Fullname", data.Fullname || "");
+  formData.append("Gender", data.Gender || "Male");
+  formData.append("Birthday", data.Birthday || "2025-02-03");
+  formData.append("Address", data.Address || "");
+  formData.append("UserName", data.UserName);
+  formData.append("Password", data.Password);
+  formData.append("PhoneNumber", data.PhoneNumber);
+
+  try {
+    const response = await axiosWithoutLoading.post(URL_API, formData);
+    return response.data;
+  } catch (error) {
+    console.error("Error adding account:", error);
+    throw error;
+  }
+};
 export {
+  RegisterUserApi,
   AddTransactionApi,
   BookingsnApi,
   GetAllCategories,

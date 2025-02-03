@@ -12,6 +12,7 @@ type PaymentWebViewProps = {
   route: RouteProp<RootStackParamList, "PaymentWebView">;
 };
 
+
 const PaymentWebView = ({ route }: PaymentWebViewProps) => {
   const navigation : NavigationProp<RootStackParamList> = useNavigation();
   const { paymentUrl } = route.params;
@@ -19,9 +20,9 @@ const PaymentWebView = ({ route }: PaymentWebViewProps) => {
   const handleNavigationStateChange = (navState: any) => {
     const { url } = navState;
 
-    // Kiểm tra URL của trang kết quả
-    if (url.includes("success") || url.includes("callback")) {
-      // Ví dụ: nếu URL chứa "success" hoặc "callback" thì quay về màn hình Home
+   
+    if (url.includes("success") || url.includes("https://fix-it-right.vercel.app/")) {
+     
       navigation.navigate("Home");
     }
   };
